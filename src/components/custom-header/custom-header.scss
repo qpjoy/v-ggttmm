@@ -1,0 +1,36 @@
+ion-header[custom_header] {
+  &::after {
+    content: ''!important;
+    box-shadow: none!important;
+    background-image: none!important;
+  }
+  ion-navbar {
+    @extend .px-5;
+    //@extend .py-0;
+    @include borderShadow();
+    border-bottom: none!important;
+    .toolbar-background {
+      border: none!important;
+      background: $navbar_toolbar_bg!important;
+    }
+    ion-buttons {
+      .button-inner {
+        @extend .nav_option_font;
+      }
+      .title_word {
+        @extend .nav_option_font;
+      }
+    }
+
+    ion-title {
+      .toolbar-title {
+        @extend .navbar_font;
+        text-transform: capitalize!important;
+      }
+    }
+  }
+}
+
+custom-header {
+
+}

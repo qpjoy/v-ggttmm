@@ -1,0 +1,9 @@
+<!--<ion-tabs>-->
+  <!--<ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>-->
+  <!--<ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>-->
+  <!--<ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>-->
+<!--</ion-tabs>-->
+
+<ion-tabs id="navTabsGlobal" #navTabs>
+  <ion-tab *ngFor="let tab of tabList; let i = index;" [root]="tab.component" tabTitle="{{tab.title}}" tabIcon="{{tab.icon}}" (ionSelect)="tabClick(i)"></ion-tab>
+</ion-tabs>

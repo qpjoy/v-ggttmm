@@ -1,0 +1,34 @@
+/*
+box-shadow: 0 1px 0 0 red;   Border bottom
+box-shadow: 0 -1px 0 0 red;   Border top
+box-shadow: -1px 0 0 0 red;  Border left
+box-shadow: 1px 0 0 0 red;  Border right
+*/
+@mixin borderShadow($direction: 'bottom', $size: $tiny_border_size, $color: $tiny_border_color) {
+  @if $direction == 'bottom' {
+    box-shadow: 0 $size 0 0 $color;
+  } @else if $direction == 'top' {
+    box-shadow: 0 (-$size) 0 0 $color;
+  }  @else if $direction == 'left' {
+    box-shadow: (-$size) 0 0 0 $color;
+  } @else if $direction == 'right'{
+    box-shadow: $size 0 0 0 $color;
+  }@else if $direction == 'all' {
+    box-shadow: 0 0 0 $size $color;
+  }
+}
+
+
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin color($color: $red) {
+  color: $color;
+}
+

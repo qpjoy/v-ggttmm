@@ -1,0 +1,47 @@
+@import "reset";
+
+$red: #DC4A4A;
+$white: #FFFFFF;
+$gold: #D49D43;
+$overview_bg: #FFFFFF;
+$title_color: #333333;
+
+/*
+*
+* 重置导航条
+*
+ */
+
+
+// 导航背景色, 导航字体
+$navbar_toolbar_bg: $white;
+$nav_title_color: #333333;
+
+.navbar_font {
+  font-family: HelveticaNeue-Bold;
+  font-size: 1.06rem;
+  color: $nav_title_color;
+  text-align: center;
+}
+
+$navbar_option_color: $red;
+.nav_option_font {
+  font-family: HelveticaNeue;
+  font-size: 1.06rem;
+  color: $navbar_option_color;
+  //text-align: center;
+  letter-spacing: -0.41px;
+  text-align: left;
+}
+
+
+// 默认底边大小,颜色
+$tiny_border_size: 1px;
+$tiny_border_color: $red;
+
+//
+//ion-content {
+//  >.scroll-content {
+//    padding: 0!important;
+//  }
+//}
