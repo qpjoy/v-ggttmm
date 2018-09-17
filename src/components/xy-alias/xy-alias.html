@@ -1,0 +1,10 @@
+<div style="height: 100%" (mousemove)="handleMouseMove($event)">
+  <div *ngIf="messageTemplate then message; else messageDefault; "></div>
+  <ng-template #message>
+    <ng-container *ngTemplateOutlet="messageTemplate.templateRef; " ></ng-container>
+  </ng-template>
+  <ng-template #messageDefault>
+    <p>You can add a custom message</p>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="pointerTemplate.templateRef; context: state" ></ng-container>
+</div>

@@ -1,16 +1,33 @@
-<ion-navbar>
-  <ion-buttons start>
-    <button ion-button icon-only (click)="goBackHandler()">
-      <span class="GTM_icon_Back"></span>
-      <span class="title_word">{{backWord}}</span>
-    </button>
-  </ion-buttons>
+<!--options nav bar-->
+<ion-navbar class="qp_nav">
 
-  <ion-title>
-    {{pageTitle}}
-  </ion-title>
+  <ion-grid class="qp_nav_grid">
+    <ion-row class="qp_nav_row">
+      <ion-col class="qp_nav_col" col-2>
+        <button class="qp_back_btn" ion-button icon-only (click)="goBackHandler()">
+          <span class="GTM_icon_Back"></span>
+          <span class="title_word">{{backWord}}</span>
+        </button>
+      </ion-col>
+      <ion-col class="qp_nav_col qp_page_title" col-8>
+        {{pageTitle}}
+      </ion-col>
+      <ion-col class="qp_nav_col" col-2></ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <ion-buttons end>
-    <span class="title_word">{{optWord}}</span>
-  </ion-buttons>
 </ion-navbar>
+
+<ion-fab top right class="ion_fab_more">
+  <button class="fab-menu qp_menu" ion-fab clear>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <!--<button ion-fab color="vibrant" mini><ion-icon name="add"></ion-icon></button>-->
+  <ion-fab-list>
+    <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+    <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+    <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+    <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+  </ion-fab-list>
+</ion-fab>

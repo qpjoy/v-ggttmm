@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the CustomHeaderComponent component.
@@ -26,16 +27,20 @@ export class CustomHeaderComponent {
   displayBackBtn: Boolean = false;
 
   constructor( public navCtrl: NavController,
+               public storage: Storage
                ) {
   // private storage: Storage
-    console.log('Hello GtmHeaderComponent Component');
 
-    // storage.get('deviceBaseInfo').then((val) => {
-    //   let deviceBaseInfo = JSON.parse(val);
-    //   let isMobile = deviceBaseInfo['isMobile'];
-    //   let isTabletOrPad = deviceBaseInfo['isTabletOrPad'];
-    //   console.log('Your age is - --- -', val);
-    // });
+
+    storage.ready().then(() => {
+      console.log('CustomHeaderComponent Component storage ready - - -');
+      storage.get('deviceBaseInfo').then((val) => {
+        let deviceBaseInfo = JSON.parse(val);
+        let isMobile = deviceBaseInfo['isMobile'];
+        let isTabletOrPad = deviceBaseInfo['isTabletOrPad'];
+        console.log('Your age is - --- -', val);
+      });
+    })
   }
 
   ionViewDidEnter() {
@@ -44,8 +49,6 @@ export class CustomHeaderComponent {
   }
 
   goBackHandler() {
-    console.log('hhh h h h ')
     this.goBack.emit({});
   }
-
 }

@@ -74,3 +74,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+ion-grid {
+  @extend .p0m0i;
+  ion-col {
+    @extend .p0m0i;
+  }
+}

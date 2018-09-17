@@ -22,7 +22,7 @@ import { RoutePage } from "../pages/route/route";
     ContactPage,
     HomePage,
     TabsPage,
-    RoutePage
+    RoutePage,
   ],
   imports: [
     BrowserModule,

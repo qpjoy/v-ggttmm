@@ -16,19 +16,30 @@ export class MyApp {
     isAndroid: false,
     isIOS: false,
     isMobile: false,
-    isTabletOrPad: false
+    isTabletOrPad: false,
+    isBrowser: false,
+    isDesktop: false
   }
+
+  isHttp = false;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               public storage: Storage) {
     platform.ready().then(() => {
-      console.log(platform.platforms(), 'this is platforms');
+      this.isHttp = document.URL.indexOf('http') === 0;
+
+      // this.isHttp = (!document.URL.startsWith('http') || document.URL.startsWith('http://localhost:8080'))
+
       this.deviceBaseInfo.isAndroid = this.platform.is('android');
       this.deviceBaseInfo.isIOS = this.platform.is('ios');
       this.deviceBaseInfo.isMobile = this.platform.is('mobile');
       this.deviceBaseInfo.isTabletOrPad = (this.platform.is('tablet') || this.platform.is('ipad'));
+      this.deviceBaseInfo.isBrowser = (this.platform.is('core') || this.platform.is('mobileweb')) && this.isHttp;
+      this.deviceBaseInfo.isDesktop = this.platform.is('core') && !this.isHttp;
+
+      console.log(platform.platforms(), 'this is platforms - - - -', this.deviceBaseInfo,document.URL);
 
       let padParams = {
         statusBar: '#ffffff'

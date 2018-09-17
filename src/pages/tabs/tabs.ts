@@ -37,7 +37,7 @@ export class TabsPage {
   }
 
   tabClick(page) {
-    console.log('this is  - - -',page);
+    console.log('this is tab index - - -',page);
   }
 }
 

@@ -4,33 +4,85 @@ ion-header[custom_header] {
     box-shadow: none!important;
     background-image: none!important;
   }
-  ion-navbar {
+  ion-navbar.qp_nav {
     @extend .px-5;
-    //@extend .py-0;
     @include borderShadow();
     border-bottom: none!important;
     .toolbar-background {
       border: none!important;
       background: $navbar_toolbar_bg!important;
     }
-    ion-buttons {
-      .button-inner {
-        @extend .nav_option_font;
-      }
-      .title_word {
-        @extend .nav_option_font;
-      }
-    }
 
-    ion-title {
-      .toolbar-title {
-        @extend .navbar_font;
-        text-transform: capitalize!important;
+    .qp_nav_grid {
+      height: 4rem;
+      line-height: 4rem;
+      //align-content: center;
+      //justify-content: center;
+      .qp_nav_row {
+        .qp_nav_col {
+          .qp_back_btn {
+            height: 4rem;
+            display: inherit;
+            box-shadow: none;
+            @extend .p0m0i;
+            .button-inner {
+              @extend .nav_option_font;
+            }
+            .title_word {
+              @extend .nav_option_font;
+            }
+          }
+          &.qp_page_title {
+            //justify-content: center;
+            text-align: center;
+          }
+        }
       }
     }
+    //ion-buttons {
+    //  .button-inner {
+    //    @extend .nav_option_font;
+    //  }
+    //  .title_word {
+    //    @extend .nav_option_font;
+    //  }
+    //}
+    //
+    //ion-title {
+    //  .toolbar-title {
+    //    @extend .navbar_font;
+    //    text-transform: capitalize!important;
+    //  }
+    //}
   }
 }
 
-custom-header {
+ion-fab.ion_fab_more {
+  position: absolute;
 
+
+  button.qp_menu {
+    @extend .p0m0i;
+    &.fab-md {
+      box-shadow: none;
+    }
+  }
+  &[right] {
+    right: 0.625rem!important;
+  }
+
+  &[top] {
+    top: 0.625rem!important;
+  }
+
+  .fab-menu {
+    background-color: $navbar_toolbar_bg;
+    color: $nav_title_color;
+  }
 }
+
+
+//element selector
+//custom-header {
+//
+//}

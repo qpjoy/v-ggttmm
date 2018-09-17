@@ -15,7 +15,7 @@ $title_color: #333333;
 
 // 导航背景色, 导航字体
 $navbar_toolbar_bg: $white;
-$nav_title_color: #333333;
+$nav_title_color: $title_color;
 
 .navbar_font {
   font-family: HelveticaNeue-Bold;
@@ -24,12 +24,12 @@ $nav_title_color: #333333;
   text-align: center;
 }
 
-$navbar_option_color: $red;
+$navbar_option_color: $nav_title_color;
 .nav_option_font {
   font-family: HelveticaNeue;
   font-size: 1.06rem;
   color: $navbar_option_color;
-  //text-align: center;
+  background-color: $navbar_toolbar_bg;
   letter-spacing: -0.41px;
   text-align: left;
 }
